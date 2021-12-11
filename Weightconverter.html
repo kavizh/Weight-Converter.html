@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .main{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 700px;
+            background-color: red;
+            justify-content: center;  
+            align-items: center;
+            border-radius: 14px;
+        }
+        input,h1{
+            width: 90%;    
+            height: 100px;
+            background-color: aqua;
+            text-align: center;
+            padding: 10px;
+        }
+        input{
+            font-size: 2rem;
+        }
+        #h2{
+            text-align: center;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body bgcolor="black"><center>
+
+
+  <div class="main">
+      <h1 id="h2">Weight Converter</h1>
+    <input type="text" id="inp" placeholder="Enter the weight in Kg">
+    <h1>
+        <div>
+            In Grams
+        </div>
+            <span id="gm"></span>
+        
+    </h1>
+    <h1>
+        <div>
+            In Pounds
+        </div>
+            <span id="lb"></span>
+        
+    </h1>
+    <h1>
+        <div>
+            In Ounce
+        </div>
+            <span id="on"></span>
+        
+    </h1>
+  </div>
+</center>  
+     <script>
+         const input_box=document.getElementById("inp")
+         const gram=document.getElementById("gm")
+         const pounds=document.getElementById("lb")
+         const Ounce=document.getElementById("on")
+         gram.innerText="gram"
+         pounds.innerText=12345
+         console.log(input_box.value)
+         input_box.oninput=()=>{                
+             gram.innerText=parseFloat(input_box.value)*1000 
+           
+             pounds.innerText=parseFloat(input_box.value)*2.20462
+            
+             Ounce.innerText=parseFloat(input_box.value)*35.274 
+         }
+     </script>
+
+</body>
+</html>
